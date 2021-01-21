@@ -1,0 +1,18 @@
+<!-- recibo datos desde el servidor por medio de flash -->
+{% with messages = get_flashed_messages() %} <!--retorn msj enviado desde servidor-->
+{% if messages %}
+<!-- comprobar si contiene msj el flash, for: si contiene msj recorro -->
+{% for message in messages %}
+<p>{{message}}</p>
+{%endfor%}
+{% endif%}
+{% endwith %}
+
+<form action="/add_contact" method="POST">
+    <input type="text" name="nombre" placeholder="ingresar nombre">
+    <input type="text" name="telefono" placeholder="ingresar telefono">
+    <input type="text" name="email" placeholder="ingresar email">
+    <button> type="submit">
+        guardar
+    </button>
+</form>
